@@ -2,15 +2,13 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/docs/',
   title: "docs",
-  base:"/docs",
   description: ".",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: '我的',items:[
-        {text: 'Examples', link: '/markdown-examples'}
-      ] },
+      { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' }
     ],
 
@@ -23,10 +21,7 @@ export default defineConfig({
         ]
       }
     ],
-    //底部设置
-    footer: {
-      message: '@于',
-    },
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]

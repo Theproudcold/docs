@@ -1,15 +1,15 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
-base: "/docs/"
+
 hero:
-  name: "Hypo的VitePress文档"
-  text: "一个使用VitePress搭建的文档网站"
-  tagline: "持续学习，不断进步"
+  name: "docs"
+  text: "."
+  tagline: My great project tagline
   actions:
     - theme: brand
-      text: 第一个实例
-      link: /JavaScript
+      text: Markdown Examples
+      link: /markdown-examples
     - theme: alt
       text: API Examples
       link: /api-examples
