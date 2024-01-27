@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import { DefaultTheme, defineConfig } from 'vitepress'
 import { set_sidebar } from "../utils/auto-gen-sidebar";	// 改成自己的路径
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -20,9 +20,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link:'/'},
-      { text: '前端', items:[{text:'uniapp',link: 'article/前端/uniapp/uniapp常见项目问题'}]},
-      { text: '后端', items:[{text:'SpringBoot',link: 'article/后端/Springboot/springboot常见项目问题'}] },
-      { text: '算法', link:'article/算法/力扣p1' },
+      { text: '前端',activeMatch:'前端/', items:[{text:'uniapp',activeMatch:'前端/uniapp',link: '前端/uniapp/uniapp常见项目问题'}]},
+      { text: '后端', items:[{text:'SpringBoot',link: '后端/Springboot/springboot常见项目问题'}] },
+      { text: '算法', link:'算法/力扣p1' },
     ],
      // 上次更新样式
     lastUpdated: {
@@ -32,11 +32,7 @@ export default defineConfig({
         timeStyle: 'medium'
       }
     },
-    // 上一页与下一页样式
-    docFooter: {
-      prev: '上一篇',
-      next: '下一篇'
-    },
+    
     search: {
       provider: 'local',
       options:{
@@ -56,7 +52,7 @@ export default defineConfig({
         },
       },
     },
-    sidebar: { "/article": set_sidebar("article") },  //侧边栏
+    sidebar: { "/前端":sidebarFrontEnd(),"/后端": set_sidebar("后端"),"/算法": set_sidebar("算法")},//侧边栏
     footer: {
       copyright:"Copyright © 2023 Hypo"
     },
@@ -65,3 +61,21 @@ export default defineConfig({
     ],
   }
 })
+function  sidebarFrontEnd(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: '前端',
+      collapsed: false,
+      items: [
+        {
+          text:'uniapp',
+          base:"/前端/uniapp",
+          items:
+          [
+            {text:'uniapp常见项目问题',link: '/uniapp常见项目问题'}
+          ]
+        },
+      ]
+    },
+  ]
+}

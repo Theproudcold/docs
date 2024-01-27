@@ -19,8 +19,8 @@ const intersections = <T>(arr1: T[], arr2: T[]): T[] =>
   Array.from(new Set(arr1.filter((item) => !new Set(arr2).has(item))));  
   
 // 获取文件/文件夹列表  
-function getList(params: string[], path1: string, pathname: string): { text: string; link?: string; collapsible?: boolean; items?: any[] }[] {  
-  const res: { text: string; link?: string; collapsible?: boolean; items?: any[] }[] = [];  
+function getList(params: string[], path1: string, pathname: string): { text: string; link?: string; collapsed?: boolean; items?: any[] }[] {  
+  const res: { text: string; link?: string; collapsed?: boolean; items?: any[] }[] = [];  
   for (let file of params) {  
     const dir: string = path.join(path1, file);  
     const isDir: boolean = isDirectory(dir);  
@@ -28,7 +28,7 @@ function getList(params: string[], path1: string, pathname: string): { text: str
       const files: string[] = fs.readdirSync(dir);  
       res.push({  
         text: file,  
-        collapsible: true,  
+        collapsed: false,  
         items: getList(files, dir, `${pathname}/${file}`),  
       });  
     } else {  
