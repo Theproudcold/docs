@@ -5,6 +5,8 @@ export default defineConfig({
   // base: '/docs/',
   title: "Hypo的文档站",
   description: ".",
+  cleanUrls:true,
+  lastUpdated:true,
   markdown:{
     lineNumbers: true,
     math:true,
@@ -18,10 +20,23 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link:'/'},
-      { text: '前端', items:[]},
-      { text: '后端', link: '/markdown-examples' },
-      { text: '算法', items:[{text:'C++',link: 'article/算法/C++/洛谷 p8833'}] },
+      { text: '前端', items:[{text:'uniapp',link: 'article/前端/uniapp/uniapp常见项目问题'}]},
+      { text: '后端', items:[{text:'SpringBoot',link: 'article/后端/Springboot/springboot常见项目问题'}] },
+      { text: '算法', link:'article/算法/力扣p1' },
     ],
+     // 上次更新样式
+    lastUpdated: {
+      text: '最后更新于',
+      formatOptions: {
+        dateStyle: 'long',
+        timeStyle: 'medium'
+      }
+    },
+    // 上一页与下一页样式
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇'
+    },
     search: {
       provider: 'local',
       options:{
@@ -47,6 +62,6 @@ export default defineConfig({
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Theproudcold' }
-    ]
+    ],
   }
 })
