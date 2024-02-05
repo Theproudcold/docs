@@ -92,7 +92,7 @@ function sidebarRearEnd():DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         {
-          text:'springBoot',
+          text:'springboot',
           base:"/后端/springboot",
           items:
           [
