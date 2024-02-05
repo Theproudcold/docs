@@ -25,7 +25,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link:'/'},
       { text: '前端',activeMatch:'前端/', items:[{text:'uniapp',activeMatch:'前端/uniapp',link: '前端/uniapp/uniapp常见项目问题'}]},
-      { text: '后端', items:[{text:'SpringBoot',link: '后端/Springboot/springboot常见项目问题'}] },
+      { text: '后端', items:[{text:'springboot',link: '后端/springboot/springboot常见项目问题'}] },
       { text: '算法', link:'算法/力扣p1' },
     ],
      // 上次更新样式
@@ -93,7 +93,7 @@ function sidebarRearEnd():DefaultTheme.SidebarItem[] {
       items: [
         {
           text:'springBoot',
-          base:"/后端/Springboot",
+          base:"/后端/springboot",
           items:
           [
             {text:'springboot常见项目问题',link: '/springboot常见项目问题'},
