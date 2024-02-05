@@ -93,7 +93,7 @@ function sidebarRearEnd():DefaultTheme.SidebarItem[] {
       items: [
         {
           text:'springBoot',
-          base:"/后端/springBoot",
+          base:"/后端/SpringBoot",
           items:
           [
             {text:'springboot常见项目问题',link: '/springboot常见项目问题'},
