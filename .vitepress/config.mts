@@ -15,6 +15,10 @@ export default defineConfig({
   themeConfig: {
     outlineTitle: "目录",
     outline: [2, 6],
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇'
+    },
     // aside: "left", // 设置右侧侧边栏在左侧显示
     logo: 'public/logo.svg',
     // https://vitepress.dev/reference/default-theme-config
@@ -52,7 +56,7 @@ export default defineConfig({
         },
       },
     },
-    sidebar: { "/前端":sidebarFrontEnd(),"/后端": set_sidebar("后端"),"/算法": set_sidebar("算法")},//侧边栏
+    sidebar: { "/前端":sidebarFrontEnd(),"/后端": sidebarRearEnd(),"/算法": sidebarAlgorithm()},//侧边栏
     footer: {
       copyright:"Copyright © 2023 Hypo"
     },
@@ -61,6 +65,7 @@ export default defineConfig({
     ],
   }
 })
+// 前端目录
 function  sidebarFrontEnd(): DefaultTheme.SidebarItem[] {
   return [
     {
@@ -75,6 +80,40 @@ function  sidebarFrontEnd(): DefaultTheme.SidebarItem[] {
             {text:'uniapp常见项目问题',link: '/uniapp常见项目问题'}
           ]
         },
+      ]
+    },
+  ]
+}
+// 后端目录
+function sidebarRearEnd():DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: '后端',
+      collapsed: false,
+      items: [
+        {
+          text:'springBoot',
+          base:"/后端/springBoot",
+          items:
+          [
+            {text:'springboot常见项目问题',link: '/springboot常见项目问题'},
+            {text:'项目打包部署流程',link: '/项目打包部署流程'}
+          ]
+        },
+      ]
+    },
+  ]
+}
+// 算法目录
+function sidebarAlgorithm():DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: '算法',
+      collapsed: false,
+      base:"/算法",
+      items: [
+        {text:'力扣p1',link: '/力扣p1',},
+        {text:'洛谷p8833',link: '/洛谷p8833',},
       ]
     },
   ]
