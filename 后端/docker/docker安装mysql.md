@@ -47,6 +47,7 @@ mysql -uroot -p
 CREATE USER 'admin'@'%' IDENTIFIED BY '123456';
 ```
 # 赋予权限
+
 ```
 GRANT ALL ON *.* TO 'admin'@'%'; 
 ```
