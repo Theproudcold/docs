@@ -40,24 +40,19 @@ export default defineConfig({
         activeMatch: "后端/",
         items: [
           {
-            text: "springboot",
-            items: [
-              {
-                text: "springboot常见项目问题",
-                activeMatch: "后端/springboot",
-                link: "后端/springboot/springboot常见项目问题",
-              },
-              {
-                text: "项目部署服务器流程",
-                activeMatch: "后端/springboot",
-                link: "后端/springboot/项目部署服务器流程",
-              },
-              {
-                text: "项目打包部署流程",
-                activeMatch: "后端/springboot",
-                link: "后端/springboot/项目打包部署流程",
-              },
-            ],
+            text: "springboot常见项目问题",
+            activeMatch: "后端/springboot",
+            link: "后端/springboot/springboot常见项目问题",
+          },
+          {
+            text: "项目部署服务器流程",
+            activeMatch: "后端/springboot",
+            link: "后端/springboot/项目部署服务器流程",
+          },
+          {
+            text: "项目打包部署流程",
+            activeMatch: "后端/springboot",
+            link: "后端/springboot/项目打包部署流程",
           },
         ],
       },
