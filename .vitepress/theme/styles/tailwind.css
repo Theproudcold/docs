@@ -1,0 +1,127 @@
+@import 'tailwindcss';
+
+@variant dark (.dark &);
+
+/* 基础变量定义 */
+:root {
+  /* 主题色 */
+  --main-color: #409eff;
+
+  /* 基础文字大小 */
+  --main-font-size: 14px;
+
+  /* VitePress 背景色覆盖 */
+  --vp-c-bg-soft: theme('colors.gray.50');
+
+  /* 主题色变体 - 使用 color-mix */
+  --main-color-dark: color-mix(in srgb, var(--main-color) 80%, black);
+
+  /* VitePress 默认颜色覆盖 */
+  --vp-c-indigo-1: var(--main-color);
+  --vp-c-indigo-2: color-mix(in srgb, var(--main-color) 75%, white);
+  --vp-c-indigo-3: color-mix(in srgb, var(--main-color) 50%, white);
+  --vp-c-indigo-soft: color-mix(in srgb, var(--main-color) 10%, transparent);
+
+  --vp-c-purple-1: #a26ef4;
+  --vp-c-purple-2: color-mix(in srgb, var(--vp-c-purple-1) 75%, white);
+  --vp-c-purple-3: color-mix(in srgb, var(--vp-c-purple-1) 50%, white);
+  --vp-c-purple-soft: color-mix(in srgb, var(--vp-c-purple-1) 10%, transparent);
+
+  --vp-c-yellow-1: #faad14;
+  --vp-c-yellow-2: color-mix(in srgb, var(--vp-c-yellow-1) 75%, white);
+  --vp-c-yellow-3: color-mix(in srgb, var(--vp-c-yellow-1) 50%, white);
+  --vp-c-yellow-soft: color-mix(in srgb, var(--vp-c-yellow-1) 10%, transparent);
+
+  --vp-c-red-1: #ff4d4f;
+  --vp-c-red-2: color-mix(in srgb, var(--vp-c-red-1) 75%, white);
+  --vp-c-red-3: color-mix(in srgb, var(--vp-c-red-1) 50%, white);
+  --vp-c-red-soft: color-mix(in srgb, var(--vp-c-red-1) 10%, transparent);
+
+  --vp-c-green-1: #52c41a;
+  --vp-c-green-2: color-mix(in srgb, var(--vp-c-green-1) 75%, white);
+  --vp-c-green-3: color-mix(in srgb, var(--vp-c-green-1) 50%, white);
+  --vp-c-green-soft: color-mix(in srgb, var(--vp-c-green-1) 10%, transparent);
+
+  /* macos 窗口小圆点颜色 */
+  --mac-window-red: #ff5c5f;
+  --mac-window-yellow: #febc2e;
+  --mac-window-green: #28c840;
+
+  /* VitePress 徽标颜色覆盖 */
+  --vp-badge-info-text: var(--vp-c-indigo-1);
+  --vp-badge-info-bg: var(--vp-c-indigo-soft);
+  --vp-badge-info-border: var(--vp-c-indigo-1);
+  --vp-badge-tip-border: var(--vp-c-green-1);
+  --vp-badge-warning-border: var(--vp-c-yellow-1);
+  --vp-badge-danger-border: var(--vp-c-red-1);
+
+  /* VitePress 按钮 */
+  --vp-button-brand-bg: var(--main-color);
+  --vp-button-brand-active-bg: var(--main-color-dark);
+
+  /* VitePress 侧边栏 */
+  --vp-sidebar-bg-color: var(--vp-c-bg-soft);
+
+  /* 主题切换按钮 */
+  --vp-input-switch-bg-color: var(--vp-c-bg-soft);
+
+  /* 搜索 */
+  --docsearch-primary-color: var(--main-color);
+  --docsearch-logo-color: var(--main-color);
+
+  /* Footer */
+  --vp-footer-height: 100px;
+
+  /* Tailwind 变量 */
+  --border-color: theme('colors.slate.200');
+  --shadow-color: theme('colors.slate.200');
+  --icon-color: theme('colors.neutral.900');
+}
+
+.dark {
+  /* VitePress 背景色覆盖 */
+  --vp-c-bg-soft: theme('colors.neutral.900');
+
+  /* 主题色变体 - 暗色模式 */
+  --main-color-dark: color-mix(in srgb, var(--main-color) 80%, black);
+  --vp-c-indigo-2: color-mix(in srgb, var(--main-color) 75%, black);
+  --vp-c-indigo-3: color-mix(in srgb, var(--main-color) 50%, black);
+  --vp-c-indigo-soft: color-mix(in srgb, var(--main-color) 20%, black);
+
+  /* VitePress 默认颜色覆盖 */
+  --vp-c-indigo-2: color-mix(in srgb, var(--main-color) 75%, black);
+  --vp-c-indigo-3: color-mix(in srgb, var(--main-color) 50%, black);
+
+  --vp-c-purple-2: color-mix(in srgb, var(--vp-c-purple-1) 75%, black);
+  --vp-c-purple-3: color-mix(in srgb, var(--vp-c-purple-1) 50%, black);
+
+  --vp-c-yellow-2: color-mix(in srgb, var(--vp-c-yellow-1) 75%, black);
+  --vp-c-yellow-3: color-mix(in srgb, var(--vp-c-yellow-1) 50%, black);
+
+  --vp-c-red-2: color-mix(in srgb, var(--vp-c-red-1) 75%, black);
+  --vp-c-red-3: color-mix(in srgb, var(--vp-c-red-1) 50%, black);
+
+  --vp-c-green-2: color-mix(in srgb, var(--vp-c-green-1) 75%, black);
+  --vp-c-green-3: color-mix(in srgb, var(--vp-c-green-1) 50%, black);
+
+  /* Tailwind 兼容变量 */
+  --border-color: theme('colors.gray.700');
+  --shadow-color: theme('colors.gray.800');
+  --icon-color: theme('colors.neutral.300');
+}
+
+/* Tailwind 主题配置 */
+@theme {
+  /* 颜色系统 */
+  --color-main: var(--main-color);
+  --color-main-dark: var(--main-color-dark);
+
+  --color-icon: var(--icon-color);
+  --color-bg: var(--vp-c-bg);
+  --color-bg-soft: var(--vp-c-bg-soft);
+  --color-text1: var(--vp-c-text-1);
+  --color-text2: var(--vp-c-text-2);
+  --color-text3: var(--vp-c-text-3);
+  --color-border: var(--border-color);
+  --color-shadow: var(--shadow-color);
+}

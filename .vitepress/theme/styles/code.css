@@ -1,0 +1,68 @@
+/* mac 窗口小圆点颜色 */
+.vp-doc {
+  div[class*='language-'],
+  .vp-code-group,
+  .vp-code-block-title {
+    --code-red: var(--mac-window-red);
+    --code-yellow: var(--mac-window-yellow);
+    --code-green: var(--mac-window-green);
+  }
+}
+
+/* 代码code：修改背景色 */
+.vp-doc :not(pre) > code {
+  @apply bg-neutral-100 dark:bg-neutral-800/50; /* Using Tailwind colors instead of bg-main/10 if not defined */
+}
+
+/* 代码块 */
+.vp-doc *:not(.vp-code-block-title):not(.blocks) > div[class*='language-'],
+.vp-doc .vp-code-block-title .vp-code-block-title-bar {
+  @apply pt-5;
+  /* 代码块：添加macOS风格的圆点 */
+  &::before {
+    @apply absolute top-3 left-3 z-10 block h-3 w-3 rounded-full;
+    content: '';
+    background-color: var(--code-red);
+    box-shadow:
+      20px 0 0 var(--code-yellow),
+      40px 0 0 var(--code-green);
+  }
+  /* 代码块：下移行号 隐藏右侧竖线 */
+  .line-numbers-wrapper {
+    @apply border-r-0 pt-10;
+    /* 代码块：重建行号右侧竖线 */
+    &::after {
+      @apply absolute top-10 right-0 h-[calc(100%-60px)] border-r border-[var(--vp-code-block-divider-color)];
+      content: '';
+    }
+  }
+}
+
+/* 适配多文件代码块 */
+.vp-doc {
+  .vp-code-group {
+    .tabs {
+      @apply pt-5;
+      &::before {
+        @apply absolute top-3 left-3 h-3 w-3 rounded-full;
+        content: '';
+        background: var(--code-red);
+        box-shadow:
+          20px 0 var(--code-yellow),
+          40px 0 var(--code-green);
+      }
+    }
+    div[class*='language-'] {
+      @apply pt-0 shadow-none;
+      &::before {
+        @apply hidden;
+      }
+      .line-numbers-wrapper {
+        @apply pt-5;
+        &::after {
+          @apply top-5 h-[calc(100%-40px)];
+        }
+      }
+    }
+  }
+}
