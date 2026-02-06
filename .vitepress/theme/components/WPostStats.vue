@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import { useData } from 'vitepress'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { countWord, countTransK, formatDate } from '../../utils/tools'
 
 const { frontmatter, page } = useData()
@@ -40,7 +40,9 @@ const pv = ref('')
 let timeoutPV: number | undefined = undefined
 
 const getPV = () => {
-  // Busuanzi PV fetch
+  // Reset PV when page changes
+  pv.value = ''
+  
   if (timeoutPV) clearTimeout(timeoutPV)
   timeoutPV = window.setTimeout(() => {
     const $PV = document.querySelector('#busuanzi_value_page_pv')
@@ -53,7 +55,7 @@ const getPV = () => {
   }, 500)
 }
 
-onMounted(() => {
+const updateStats = () => {
   // Use server-side injected data if available
   const date = frontmatter.value.date // injected by transformPageData
   if (date) {
@@ -80,7 +82,17 @@ onMounted(() => {
     const words = docDomContainer?.querySelector('.content-container .main')?.textContent || ''
     wordCount.value = countTransK(countWord(words)) as string
   }
-  
+}
+
+// Watch for route changes (frontmatter changes)
+watch(frontmatter, () => {
+  updateStats()
+  getPV()
+})
+
+
+onMounted(() => {
+  updateStats()
   getPV()
 })
 </script>
