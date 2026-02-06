@@ -50,7 +50,7 @@ jobs:
         with:
           # 注意：如果你的 VitePress 在 docs 目录下，请确保路径正确
           # 如果你的 .vitepress 就在根目录，则保持 .vitepress/dist
-          path: docs/.vitepress/dist 
+          path: .vitepress/dist 
 
   # 部署工作
   deploy:
